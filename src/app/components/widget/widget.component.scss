@@ -1,0 +1,23 @@
+:host {
+    display: block;
+    border-radius: 16px;
+    --mat-button-toggle-height: 14px;
+}
+
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+    border-radius: inherit;
+    overflow: hidden;
+}
+
+.settings {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+    

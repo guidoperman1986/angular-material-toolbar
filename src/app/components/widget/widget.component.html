@@ -1,0 +1,23 @@
+<div 
+    class="container mat-elevation-z3" 
+    [style.background]="data()!.background ?? 'white'" 
+    [style.color]="data()!.color ?? 'inherit'"
+>
+    <h3 class="m-0"> {{data()!.label}} </h3>
+
+    <button 
+        mat-icon-button 
+        class="settings" 
+        (click)="showOptions.set(true)"
+        [style.--mdc-icon-button-icon-color]="data()!.color ?? 'inherit'"
+    >
+        <mat-icon>settings</mat-icon>
+    </button>
+
+    <ng-container [ngComponentOutlet]="data()!.content"></ng-container>
+
+    @if (showOptions()) {
+        <app-widget-options [(showOptions)]="showOptions" [data]="data()"></app-widget-options>
+    }
+
+</div>

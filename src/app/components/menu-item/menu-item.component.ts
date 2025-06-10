@@ -37,7 +37,7 @@ export class MenuItemComponent {
 
   ngOnInit(): void {
     this.toggleNestedOnRouteSelected();
-  }
+    }
 
   toggleNestedOnRouteSelected() {
     const routeSections = this.router.url.split('/');
@@ -49,9 +49,9 @@ export class MenuItemComponent {
         item.route?.includes(routeSections[2])
       )
     ) {
-      this.nestedMenuOpen.set(!this.nestedMenuOpen());
-    }
+    this.nestedMenuOpen.set(!this.nestedMenuOpen());
   }
+}
 
   toggleNested() {
     if (!this.item().subitems) {
