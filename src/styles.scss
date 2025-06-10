@@ -8,4 +8,34 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  --primary-color: #cc0000;
 }
+
+$mat-primary: (
+  main: #cc0000,
+  lighter: #f0b3b3,
+  darker: #b90000,
+  200: #cc0000,
+  contrast: (
+    main: #fff,
+    lighter: #000,
+    darker: #fff,
+  ),
+);
+
+// CHANGE HERE: Add m2- prefix
+$theme-primary: mat.m2-define-palette($mat-primary, main, lighter, darker);
+$theme-accent: mat.m2-define-palette(mat.$m2-indigo-palette, A200, A100, A400); // Also need m2- for built-in palettes
+
+// CHANGE HERE: Add m2- prefix
+$my-theme: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $theme-primary,
+      accent: $theme-accent,
+    )
+  )
+);
+
+// This one typically doesn't change
+@include mat.all-component-themes($my-theme);

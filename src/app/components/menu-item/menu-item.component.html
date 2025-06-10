@@ -15,14 +15,14 @@
   @if (!collapsed()) {
     <span matListItemTitle> {{ item().label }} </span>
   } @if(item().subitems) {
-        <span matListItemMeta>
+    <span matListItemMeta>
       @if (!nestedMenuOpen() ) {
         <mat-icon>expand_more</mat-icon>
       } @else {
         <mat-icon>expand_less</mat-icon>
       }
-        </span>
-      }
+    </span>
+  }
 </a>
 
 @if (item().subitems && nestedMenuOpen()) {
